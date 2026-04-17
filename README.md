@@ -80,8 +80,7 @@ EchoSort-vision/
         │   └── script.js
         └── uploads/
 
-
- ⚙️ Installation & Setup
+⚙️ Installation & Setup
 1️⃣ Clone Repository
 
  git clone https://github.com/YOUR_USERNAME/EcoSort-Vision.git
@@ -121,25 +120,12 @@ http://127.0.0.1:5000
   >Multi-item scan
 5.Results displayed instantly.
 
-📸 Screenshots
-
-Home Page
-
-(Add Screenshot)
-
-Result Page
-
-
-
-(Add Screenshot)
-
-
 📌 Notes
  >Includes fallback compatibility mode if legacy model loading fails.
  >Lightweight sample dataset included.
  >Designed as a student innovation project for sustainable waste management.
 
- 🔮 Future Enhancements
+🔮 Future Enhancements
  >Add more waste categories (plastic, metal, glass, e-waste)
  >Real-time webcam detection
  >Mobile application
