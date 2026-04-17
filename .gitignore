@@ -1,0 +1,28 @@
+# Virtual environments
+venv/
+webapp/venv/
+
+# Python cache files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Upload folder (temporary user uploads)
+webapp/static/uploads/*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# VS Code settings
+.vscode/
+
+# Logs
+*.log
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Environment files
+.env

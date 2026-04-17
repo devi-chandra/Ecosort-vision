@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>EchoSort Vision • Result</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+    :root{
+        --bg1:#0A0F1F; --bg2:#0D1329; --bg3:#080A17;
+        --cyan:#00E5FF; --mint:#8AFFC1;
+        --violet:#A45CFF; --pink:#FF4F6A;
+        --gold:#FFD166; --softblue:#9FE8FF;
+    }
+    body{
+        margin:0;
+        padding:0;
+        background:linear-gradient(135deg,var(--bg1),var(--bg2),var(--bg3));
+        font-family:"Poppins",sans-serif;
+        color:white;
+        overflow-x:hidden;
+        min-height:100vh;
+    }
+
+    
+    .container{
+        max-width:800px;
+        margin:40px auto;
+        background:rgba(255,255,255,0.04);
+        border-radius:18px;
+        padding:32px;
+        box-shadow:0 0 40px rgba(0,229,255,0.12);
+        backdrop-filter:blur(6px);
+        animation: fadeIn 0.8s ease forwards;
+    }
+
+    @keyframes fadeIn{
+        from{opacity:0; transform:translateY(20px);}
+        to{opacity:1; transform:translateY(0);}
+    }
+
+    h1{
+        font-size:34px;
+        text-align:center;
+        background: linear-gradient(90deg,var(--cyan),var(--mint),var(--violet));
+        -webkit-background-clip:text;
+        -webkit-text-fill-color:transparent;
+        margin-bottom:20px;
+        font-weight:700;
+    }
+
+    .image-box{
+        width:100%;
+        height:auto;
+        text-align:center;
+        margin-bottom:22px;
+    }
+
+    .image-box img{
+        width:80%;
+        border-radius:14px;
+        box-shadow:0 0 22px rgba(0,229,255,0.22);
+        animation: pop 0.7s ease;
+    }
+
+    @keyframes pop{
+        0%{transform:scale(0.9);}
+        100%{transform:scale(1);}
+    }
+
+    .info-card{
+        background:rgba(255,255,255,0.06);
+        padding:18px 22px;
+        border-radius:14px;
+        margin-bottom:16px;
+        box-shadow:0 0 16px rgba(0,229,255,0.15);
+        border-left:4px solid var(--cyan);
+    }
+
+    .warning-card{
+        background:rgba(255,79,106,0.1);
+        border-left:4px solid var(--pink);
+        box-shadow:0 0 18px rgba(255,79,106,0.22);
+    }
+
+    .label{
+        font-weight:600;
+        color:var(--softblue);
+        margin-bottom:6px;
+        font-size:15px;
+    }
+
+    .value{
+        font-size:17px;
+    }
+
+    .back-btn{
+        display:block;
+        width:max-content;
+        margin:30px auto 10px;
+        padding:12px 26px;
+        font-size:16px;
+        background:linear-gradient(135deg,var(--cyan),var(--violet));
+        color:white;
+        border-radius:12px;
+        text-decoration:none;
+        font-weight:600;
+        box-shadow:0 10px 28px rgba(0,229,255,0.18);
+        transition:0.2s ease;
+    }
+
+    .back-btn:hover{
+        transform:translateY(-3px);
+        box-shadow:0 16px 40px rgba(164,92,255,0.22);
+    }
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <h1>🔍 Classification Result</h1>
+
+    <!-- IMAGE -->
+    <div class="image-box">
+        <img src="{{ url_for('static', filename=image_path) }}" alt="Uploaded Image">
+    </div>
+
+    <!-- WASTE TYPE -->
+    <div class="info-card">
+        <div class="label">Type:</div>
+        <div class="value">{{ waste_type }}</div>
+    </div>
+
+    <!-- INSTRUCTION -->
+    <div class="info-card">
+        <div class="label">Instruction:</div>
+        <div class="value">{{ instruction }}</div>
+    </div>
+
+    <!-- MULTI-WASTE SCAN -->
+    <div class="info-card">
+        <div class="label">Detected items:</div>
+        <div class="value">{{ detected_items }}</div>
+    </div>
+
+    <!-- WASTE LEVEL -->
+    <div class="info-card">
+        <div class="label">Waste level:</div>
+        <div class="value">{{ waste_level }}</div>
+    </div>
+
+    <!-- WARNINGS -->
+    {% if harmful_warning %}
+    <div class="info-card warning-card">
+        <div class="label">Warnings:</div>
+        <div class="value">{{ harmful_warning }}</div>
+    </div>
+    {% endif %}
+
+    <a class="back-btn" href="/">← Back</a>
+</div>
+
+</body>
+</html>
