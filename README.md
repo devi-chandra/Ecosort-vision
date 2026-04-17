@@ -2,7 +2,9 @@
 
 EcoSort Vision is an AI-assisted waste segregation web application that helps users identify waste as **Organic Waste** or **Recyclable Waste** using image upload or camera capture.
 
-The system is designed to support smarter waste management by combining image classification, waste level estimation, and harmful waste alerts in a clean and user-friendly interface.
+The system is designed to support smarter waste management by combining image classification, waste level estimation, and harmful waste alerts in a clean and user-friendly interface
+
+Developed during an industry-oriented internship focused on AI for sustainability solutions.
 
 ---
 
@@ -142,6 +144,12 @@ This project can be useful for:
   >Waste collection agencies
   >Recycling centers
   >Public awareness campaigns
+
+## 💼 Internship Project
+
+EcoSort Vision was developed as part of an internship program conducted through Edunet Foundation in collaboration with AICTE and Shell.
+
+The project focused on applying AI and web technologies to solve real-world sustainability challenges through smart waste segregation.
 
 👨‍💻 Author
 
